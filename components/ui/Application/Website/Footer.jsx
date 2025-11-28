@@ -1,0 +1,137 @@
+import Image from 'next/image';
+import React from 'react';
+import Logo from '@/public/assets/images/wydlogoblackk.png';
+import Link from 'next/link';
+import { USER_DASHBOARD, WEBSITE_HOME, WEBSITE_LOGIN, WEBSITE_REGISTER, WEBSITE_SHOP } from '@/routes/WebsiteRoute';
+import { IoLocationOutline } from "react-icons/io5"
+import { MdOutlinePhone } from "react-icons/md";
+import { MdOutlineEmail } from "react-icons/md";
+import { IoLogoInstagram } from "react-icons/io";
+
+const Footer = () => {
+  return (
+    <footer className="bg-gray-50 border-t">
+      <div className="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-10 py-10 lg:px-32 px-4">
+
+        <div className="lg:col-span-1 md:col-span-2 col-span-1">
+          <Image
+            src={Logo}
+            width={383}
+            height={145}
+            alt="logo"
+            className="w-25 mb-2"
+          />
+          <p className="text-gray-500 text-sm">
+           WYD is your trusted destination for quality and convenience.
+            From fashion to essentials, we bring everything you need right to
+            your doorstep. Shop smart, live better — only at WYD.
+          </p>
+        </div>
+
+        <div>
+          <h4 className='text-xl font-bold uppercase mb-5' >Categories</h4>
+          <ul>
+            <li className='mb-2 text-gray-500' >
+              <Link href={`${WEBSITE_SHOP}?category=t-shirts`} >T-Shirt</Link>
+            </li>
+            <li className='mb-2 text-gray-500' >
+              <Link href={`${WEBSITE_SHOP}?category=hoodies`} >Hoodies</Link>
+            </li>
+            <li className='mb-2 text-gray-500' >
+              <Link href={`${WEBSITE_SHOP}?category=oversized`} >Oversized</Link>
+            </li>
+            <li className='mb-2 text-gray-500' >
+              <Link href={`${WEBSITE_SHOP}?category=full-sleeves`} >Full Sleeves</Link>
+            </li>
+            <li className='mb-2 text-gray-500' >
+              <Link href={`${WEBSITE_SHOP}?category=polo`} >Polo</Link>
+            </li>
+          </ul>
+        </div>
+
+         <div>
+          <h4 className='text-xl font-bold uppercase mb-5' >User Links</h4>
+          <ul>
+            <li className='mb-2 text-gray-500' >
+              <Link href={WEBSITE_HOME} >Home</Link>
+            </li>
+            <li className='mb-2 text-gray-500' >
+              <Link href={WEBSITE_SHOP} >Shop</Link>
+            </li>
+            <li className='mb-2 text-gray-500' >
+              <Link href="/about-us" >About</Link>
+            </li>
+            <li className='mb-2 text-gray-500' >
+              <Link href={WEBSITE_REGISTER}>Register</Link>
+            </li>
+            <li className='mb-2 text-gray-500' >
+              <Link href={WEBSITE_LOGIN}>Login</Link>
+            </li>
+           
+          </ul>
+        </div>
+
+        <div>
+          <h4 className='text-xl font-bold uppercase mb-5' >Help Center</h4>
+          <ul>
+            <li className='mb-2 text-gray-500' >
+              <Link href={WEBSITE_REGISTER} >Register</Link>
+            </li>
+            <li className='mb-2 text-gray-500' >
+              <Link href={WEBSITE_LOGIN} >Login</Link>
+            </li>
+            <li className='mb-2 text-gray-500' >
+              <Link href={USER_DASHBOARD} >My Account</Link>
+            </li>
+            <li className='mb-2 text-gray-500' >
+              <Link href="/privacy-policy" >Privacy Policy</Link>
+            </li>
+            <li className='mb-2 text-gray-500' >
+              <Link href="/terms-and-conditions" >Terms & Conditions</Link>
+            </li>
+           
+           
+          </ul>
+        </div>
+
+          <div>
+          <h4 className='text-xl font-bold uppercase mb-5' >Contact Us</h4>
+          <ul>
+            <li className='mb-2 text-gray-500 flex gap-2' >
+              <IoLocationOutline size={20}/>
+              <span className='text-sm'>WYD-WhatsYourDrip Jaipur, India
+               
+              </span>
+            </li>
+            <li className='mb-2 text-gray-500 flex gap-2' >
+              <MdOutlinePhone size={20}/>
+             <Link href="tel:+91-1234567890" className='hover:text-primary text-sm' >+91-1234567890</Link>
+            </li>
+            <li className='mb-2 text-gray-500 flex gap-2' >
+              <MdOutlineEmail size={20}/>
+             <Link href="mailto:support@wyd.com" className='hover:text-primary text-sm' >support@wyd.com</Link>
+            </li>
+           
+           
+           
+          </ul>
+
+          <div className='flex gap-2 mt-5' >
+            <Link href='' >
+            <IoLogoInstagram className='text-primary' size={25} />
+            </Link>
+            <span className='text-gray-500 hover:text-primary cursor-pointer'>Instagram</span>
+          </div>
+        </div>
+
+      </div>
+
+    <div className='py-5 bg-gray-100' >
+      <p className='text-center' >© 2025 WYD. All Rights Reserved.</p>
+    </div>
+
+    </footer>
+  );
+};
+
+export default Footer;
