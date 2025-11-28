@@ -5,9 +5,9 @@ import { IoArrowForward } from "react-icons/io5";
 import ProductBox from './ProductBox';
 
 const FeaturedProduct = async () => {
+  let productData = null
 
   try {
-    let productData = null
     const {data} = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/product/get-featured-product`)
     productData = data
 
